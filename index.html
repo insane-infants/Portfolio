@@ -126,7 +126,7 @@
     <div class="caption-header text-center wow zoomInDown">
       <h5 class="fw-normal">Welcome</h5>
       <h1 class="fw-light mb-4">I'm <b class="fg-theme">Asad</b> Arshad</h1>
-      <div class="badge">Astrophysicist & Programmer</div>
+      <div class="badge">Astrophysicist , GIS Specialist & Programmer</div>
     </div> <!-- End Caption header -->
     <div class="floating-button"><span class="ti-mouse"></span></div>
   </div>
@@ -304,7 +304,7 @@
               <div class="details">
                 <h5>Internship</h5>
                 <small class="fg-theme">Pakistan Metrological Department, Head Quarters, Islamabad</small>
-                <p>A short fun summer intership</p>
+                <p>A short fun summer internship</p>
               </div>
             </li>
             <li>
@@ -312,7 +312,7 @@
               <div class="details">
                 <h5>Assistant & Helper</h5>
                 <small class="fg-theme">  South Asia Rainwater Network</small>
-                <p>Assistant of Dr. Khalid during an online GIS course held by \href{https://sarainwater.org/}{SARNET} as well as a member of this community</p>
+                <p>Assistant of Dr. Khalid during an online GIS course held by <a href="https://sarainwater.org">SARNET</a> as well as a member of this community</p>
               </div>
             </li>
             <!-- <li> -->
@@ -398,8 +398,12 @@
           <span>Project Completed</span>
         </div>
         <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
-          <h1 class="number" data-number="3">3</h1>
+          <h1 class="number" data-number="2">2</h1>
           <span>Project Ongoing</span>
+        </div>
+        <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
+          <h1 >&infin;</h1>
+          <span>Project Upcoming</span>
         </div>
         
       </div>
@@ -540,10 +544,24 @@
             <img src="assets\img\def_funsquare_wave.gif" alt="">
             <div class="img-caption">
               <h5 class="fg-theme">Fourier Series Art using Python</h5>
-              <p></p>
+              <p>Some Fun using maths and programming</p>
             </div>
           </div>
         </div>      
+
+        <div class="grid-item template wireframes wow zoomIn">
+          <div class="img-place" data-src="assets\img\app.mp4" data-fancybox data-caption="<h5 class='fg-theme'> Book-keeping Desktop App (prototype) </h5> <p>
+                  </p>">
+            <video width = "500" height= "400" controls>
+              <source src="assets\img\app.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="img-caption">
+              <h5 class="fg-theme">Book-keeping Desktop App (prototype)</h5>
+              <p>A Desktop Book-keeping App build using Python eel</p>
+            </div>
+          </div>
+        </div>
 
       </div> <!-- End gridder -->
       <div class="text-center wow fadeInUp">
@@ -796,12 +814,60 @@ zoomHome.addTo(map);
               </div>
               <button type="submit" class="btn btn-theme mt-3 wow fadeInUp ml-1">Send Message</button>
             </div>
-          </form>
-        </div>
-      </div> -->
+          </form> 
+                </div>
+      </div> 
     </div>
   </div> <!-- End Contact -->
   
+ <script>
+        // Get references to the form elements
+        const contactForm = document.getElementById('contactForm');
+        const nameInput = document.getElementById('nameInput');
+        const emailInput = document.getElementById('emailInput');
+        const subjectInput = document.getElementById('subjectInput');
+        const messageInput = document.getElementById('messageInput');
+        const sendMessageBtn = document.getElementById('sendMessageBtn');
+
+        // Function to handle sending the email
+        function sendEmail(event) {
+            // Prevent the default form submission behavior (which would reload the page)
+            event.preventDefault();
+
+            // Get the values from the input fields
+            const name = nameInput.value.trim();
+            const email = emailInput.value.trim();
+            const subject = subjectInput.value.trim();
+            const message = messageInput.value.trim();
+
+            // Define the recipient email address (change this to your actual email)
+            const recipientEmail = 'your_email@example.com'; // IMPORTANT: Change this!
+
+            // Construct the email subject
+            const emailSubject = encodeURIComponent(subject || 'Contact Form Submission'); // Use default if subject is empty
+
+            // Construct the email body
+            // We'll include the sender's name and email in the body for clarity
+            const emailBody = encodeURIComponent(
+                `Name: ${name}\n` +
+                `Email: ${email}\n\n` +
+                `${message}`
+            );
+
+            // Create the mailto link
+            const mailtoLink = `mailto:${recipientEmail}?subject=${emailSubject}&body=${emailBody}`;
+
+            // Open the default mail client
+            window.location.href = mailtoLink;
+
+            // Optionally, clear the form after opening the mail client
+            // contactForm.reset();
+        }
+
+        // Add an event listener to the form for submission
+        contactForm.addEventListener('submit', sendEmail);
+    </script>
+
   <!-- Footer -->
   <div class="vg-footer">
     <h1 class="text-center">Asad Arshad</h1>
@@ -838,7 +904,7 @@ zoomHome.addTo(map);
           </div>
         </div>
       </div>
-      <div class="row justify-content-center mt-3">
+      <!-- <div class="row justify-content-center mt-3">
         <div class="col-12 mb-3">
           <h3 class="fw-normal text-center">Subscribe</h3>
         </div>
@@ -847,7 +913,7 @@ zoomHome.addTo(map);
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Email address">
               <input type="submit" class="btn btn-theme no-shadow" value="Subscribe">
-            </div>
+            </div> -->
           </form>
         </div>
         <div class="col-12">

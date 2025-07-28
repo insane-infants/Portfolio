@@ -1,10 +1,13 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "../../ArcGIS_pro_Projects"
-		}
-	]
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "../../ArcGIS_pro_Projects"
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Portfolio"
+  }
 }
